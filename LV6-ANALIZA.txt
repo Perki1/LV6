@@ -1,0 +1,313 @@
+//1.zadatak
+/*Napravite aplikaciju znanstveni kalkulator koja æe imati funkcionalnost
+znanstvenog kalkulatora, odnosno implementirati osnovne (+,-,*,/) i barem 5
+naprednih (sin, cos, log, sqrt...) operacija.*/
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication12
+{
+    public partial class Kalkulator : Form
+    {
+        double op, rez;
+        int br;
+
+        public Kalkulator()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 0;
+            label1.Text = label1.Text + '0';
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 1;
+            label1.Text = label1.Text + '1';
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 2;
+            label1.Text = label1.Text + '2';
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 3;
+            label1.Text = label1.Text + '3';
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 4;
+            label1.Text = label1.Text + '4';
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 5;
+            label1.Text = label1.Text + '5';
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 6;
+            label1.Text = label1.Text + '6';
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 7;
+            label1.Text = label1.Text + '7';
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 8;
+            label1.Text = label1.Text + '8';
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + 9;
+            label1.Text = label1.Text + '9';
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + ',';
+            label1.Text = label1.Text + ',';
+        }
+
+        private void buttonplus_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 1;
+            label1.Text = op.ToString() + '+';
+        }
+
+        private void buttonminus_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 2;
+            label1.Text = op.ToString() + '-';
+        }
+
+        private void buttonputa_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 3;
+            label1.Text = op.ToString() + '*';
+        }
+
+        private void buttondjeljenje_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 4;
+            label1.Text = op.ToString() + '/';
+        }
+
+        private void buttonsin_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 5;
+            label1.Text = "sin" + "(" + op.ToString() + ")";
+        }
+
+        private void buttoncos_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 6;
+            label1.Text = "cos" + "(" + op.ToString() + ")";
+        }
+
+        private void buttontan_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 7;
+            label1.Text = "tan" + "(" + op.ToString() + ")";
+        }
+
+        private void buttonlog_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 8;
+            label1.Text = "log" + "(" + op.ToString() + ")";
+        }
+
+        private void buttonsqrt_Click(object sender, EventArgs e)
+        {
+            op = double.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            br = 9;
+            label1.Text = "sqrt" + "(" + op.ToString() + ")";
+        }
+
+        private void buttonclear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            label1.Text = "";
+        }
+
+        private void buttonjednako_Click(object sender, EventArgs e)
+        {
+            label1.Text = "";
+            switch (br)
+            {
+                case 1:
+                    rez = op + double.Parse(textBox1.Text);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 2:
+                    rez = op - double.Parse(textBox1.Text);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 3:
+                    rez = op * double.Parse(textBox1.Text);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 4:
+                    rez = op / double.Parse(textBox1.Text);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 5:
+                    rez = Math.Sin(op);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 6:
+                    rez = Math.Cos(op);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 7:
+                    rez = Math.Tan(op);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 8:
+                    rez = Math.Log(op);
+                    textBox1.Text = rez.ToString();
+                    break;
+                case 9:
+                    rez = Math.Sqrt(op);
+                    textBox1.Text = rez.ToString();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+}
+
+//2.zadatak
+/* Napravite jednostavnu igru vješala. Pojmovi se uèitavaju u listu iz datoteke, i u
+svakoj partiji se odabire nasumièni pojam iz liste. Omoguæiti svu
+funkcionalnost koju biste oèekivali od takve igre. Nije nužno crtati vješala,
+dovoljno je na labeli ispisati koliko je pokušaja za odabir slova preostalo.*/
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication14
+{
+    public partial class Form1 : Form
+    {
+        List<string> list = new List<string>();
+        string path = "C:\\Users\\Luka-PC\\Desktop\\oop\\moja.txt";
+        int counter = 5;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            using (System.IO.StreamReader reader = new System.IO.StreamReader(@path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    list.Add(line);
+                }
+                listBox1.DataSource = null;
+                listBox1.DataSource = list;
+                listBox1.Hide();
+            }
+        }
+
+        private void button_pogodi_Click(object sender, EventArgs e)
+        {
+            string rijec = listBox1.SelectedItem.ToString();
+            string slovo = textBox1.Text;
+            if (rijec.Substring(0, rijec.Length - 1).Contains(slovo))
+            {
+                MessageBox.Show("Pogodili ste slovo !!!");
+            }
+            else
+            {
+                label1.Text = (--counter).ToString();
+                if (counter == 0)
+                {
+                    MessageBox.Show("Game over !!!");
+                    Application.Restart();
+                }
+            }
+        }
+
+        private void button_generator_Click(object sender, EventArgs e)
+        {
+            Random generator = new Random();
+            int x = listBox1.Items.Count;
+            int y = generator.Next(0, x);
+            listBox1.SetSelected(y, true);
+            string a = listBox1.SelectedItem.ToString();
+            label2.Text = "Duljina rijeci je: " + a.Length.ToString();
+        }
+
+        private void button_konacnarijec_Click(object sender, EventArgs e)
+        {
+            string a = listBox1.SelectedItem.ToString();
+            string b = textBox2.Text;
+            if (a == b)
+            {
+                MessageBox.Show("WIN !!!");
+                Application.Restart();
+            }
+        }
+    }
+}
